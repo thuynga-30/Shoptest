@@ -127,7 +127,7 @@ class AccountController extends Controller
 
     }
     public function resetPass($token){
-        $tokenData = UserResetToken::where('token',$token)->firstOrFail();; 
+        $tokenData = UserResetToken::where('token',$token)->firstOrFail();
         return view('users.log-sign.reset-pass', [
             'title' => 'Reset Pass',
             'token' => $token

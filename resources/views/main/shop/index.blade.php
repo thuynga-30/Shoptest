@@ -20,10 +20,10 @@
                         <nav class="navbar">
                             <ul class="navbar__list">
                                 <li class="navbar__item">
-                                    <a href="" class="navbar__link">Home</a>
+                                    <a href="{{ route('index') }}" class="navbar__link">Home</a>
                                 </li>
                                 <li class="navbar__item">
-                                    <a href="" class="navbar__link">About</a>
+                                    <a href="{{ route('about') }}" class="navbar__link">About</a>
                                 </li>
                                 <li class="navbar__item">
                                     <a href="" class="navbar__link">Product</a>

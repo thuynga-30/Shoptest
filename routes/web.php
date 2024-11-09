@@ -30,5 +30,17 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/check-forgot', [AccountController::class, 'check_forgot']);
 
     Route::get('/reset-password/{token}', [AccountController::class, 'resetPass'])->name('reset');
-    Route::post('/check-reset/{token}', [AccountController::class, 'check_forgot']);
+    Route::post('/check-reset/{token}', [AccountController::class, 'Check_resetPass']);
+    // about
+    Route::get('/about', [MainController::class, 'about'])->name('about');
+    //contact
+    Route::get('/contact', [MainController::class, 'contact'])->name('contact');
+    //contact_store
+    Route::post('/contact/store', [MainController::class, 'contact_store'])->name('contact-store');
+    //product
+    Route::get('/product', [MainController::class, 'product'])->name('product');
+    Route::get('/product/{id}', [MainController::class, 'productDetail'])->name('productDetail');
+    //cart
+    Route::get('/cart', [MainController::class, 'cart'])->name('cart');
+    
     

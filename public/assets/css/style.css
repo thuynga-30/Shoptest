@@ -73,9 +73,7 @@
     color: white;
     text-shadow: 1px 0 1px currentColor;
 }
-.navbar__item{
-    position: relative;
-}
+
 
 .header__content {
     position: relative;
@@ -504,6 +502,10 @@
     padding: 50px 0;
 }
 
+.contact .row {
+    align-items: center;
+}
+
 .contact__content {
     margin-left: auto;
     width: 370px;
@@ -583,12 +585,15 @@
 } */
 /* End Media Section */
 /* Footer */
-.footer {
-    padding: 50px 0;
-}
+.footer {}
 
 .footer .row {
     align-items: center;
+}
+
+.footer__inner {
+    padding: 50px 0;
+    border-top: 2px solid var(--primary-color);
 }
 
 .footer__title {
@@ -606,10 +611,12 @@
     font-weight: 500;
     transition: all .5s ease;
 }
-.footer__link:hover{
+
+.footer__link:hover {
     color: var(--primary-color);
     text-shadow: 1px 0 1px currentColor;
 }
+
 .footer__logo-wrap {
     width: 100%;
     height: 100%;
@@ -621,7 +628,12 @@
     margin: 0 auto;
     display: block;
 }
-
+.footer__form-inner{
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--primary-color);
+}
 .footer__form-group {
     margin-bottom: 20px;
 }
@@ -636,30 +648,19 @@
 .footer__form-input,
 .footer__form-mess {
     font-size: 1.7rem;
+    border: none;
+   
 }
-.dropdown:hover .dropdown-menu {
-    display: block; /* Hiển thị khi hover */
+.footer__form-inner button{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-
-/* Căn chỉnh dropdown để đẹp hơn */
-.dropdown-menu {
-    position: absolute;
-    top: 110%; 
-    left: 0;
-    min-width: 150px; /* Kích thước tối thiểu */
-    background-color: #fff1a3; /* Màu nền trắng */
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Đường viền nhẹ */
-    border-radius: 8px; /* Bo góc */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
-    padding: 10px 0; /* Giãn cách giữa các mục */
-    z-index: 1050; /* Đảm bảo nằm trên các thành phần khác */
-    display: none; /* Ẩn mặc định */
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s; /* Hiệu ứng chuyển động */
-    visibility: hidden;
+.footer__form-input:focus{
+    border-color: none;
+    outline: 0;
+    box-shadow: none;
 }
-
-/* Hiển thị dropdown khi hover */
+/* End Footer */
 .navbar__item.dropdown:hover .dropdown-menu {
     display: block;
     opacity: 1;
@@ -685,6 +686,3 @@
     background-color: rgba(0, 0, 0, 0.05); /* Nền xám nhẹ khi hover */
     border-radius: 6px; /* Bo góc nhẹ */
 }
-
-
-/* End Footer */

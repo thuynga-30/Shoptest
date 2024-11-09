@@ -20,19 +20,19 @@
                         <nav class="navbar">
                             <ul class="navbar__list">
                                 <li class="navbar__item">
-                                    <a href="" class="navbar__link">Home</a>
+                                    <a href="{{ route('home') }}" class="navbar__link">Home</a>
                                 </li>
                                 <li class="navbar__item">
-                                    <a href="" class="navbar__link">About</a>
+                                    <a href="{{ route('about') }}" class="navbar__link">About</a>
                                 </li>
                                 <li class="navbar__item">
-                                    <a href="" class="navbar__link">Product</a>
+                                    <a href="{{ route('product') }}" class="navbar__link">Product</a>
                                 </li>
+                                {{-- <li class="navbar__item">
+                                    <a href="{{ route('') }}" class="navbar__link">Food</a>
+                                </li> --}}
                                 <li class="navbar__item">
-                                    <a href="" class="navbar__link">Food</a>
-                                </li>
-                                <li class="navbar__item">
-                                    <a href="" class="navbar__link">
+                                    <a href="{{ route('cart') }}" class="navbar__link">
                                         <i class="fa-solid fa-cart-shopping navbar__link-icon"></i>
                                         <span class="navbar__link-text">
                                             Cart
@@ -40,7 +40,7 @@
                                     </a>
                                 </li>
                                 <li class="navbar__item">
-                                    <a href="" class="navbar__link navbar__link--special btn">Contact</a>
+                                    <a href="{{ route('contact') }}" class="navbar__link navbar__link--special btn">Contact</a>
                                 </li>
                                 
                             </ul >
@@ -550,7 +550,7 @@
                                         Huỳnh Văn Nghệ
                                     </p>
                                 </div>
-                                <a href="" class="contact__action btn btn-2">Contact</a>
+                                <a href="{{ route('contact') }}" class="contact__action btn btn-2">Contact</a>
                             </div>
                         </div>
                     </div>
