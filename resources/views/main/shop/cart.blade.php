@@ -3,7 +3,7 @@
 
 <head>
     @include('main.header')
-    <link rel="stylesheet" href="/assets/css/cart.css  ">
+    <link rel="stylesheet" href="/assets/css/cart.css">
 
 </head>
 
@@ -56,6 +56,19 @@
                 </div>
             </div>
         </div>
+        <div class="header__content">
+            <div class="container">
+                <div class="header__content-inner">
+                    <figure class="header__img-wrap">
+                        <img src="/assets/img/Organic.png" alt="" class="header__img">
+                    </figure>
+                    <h1 class="header__title">
+                        Food for a golden life.
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
     </header>
     <!-- End Header -->
     <!-- Main -->

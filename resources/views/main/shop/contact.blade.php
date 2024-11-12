@@ -3,7 +3,7 @@
 
 <head>
     @include('main.header')
-    <link rel="stylesheet" href="/assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
 
 </head>
 
@@ -16,7 +16,7 @@
                 <div class="container">
                     <div class="header__top-inner">
                         <!-- Logo -->
-                        <img src="/assets/img/logo.png" alt="" class="logo">
+                        <img src="assets/img/logo.png" alt="" class="logo">
                         <!-- Navbar -->
                         <nav class="navbar">
                             <ul class="navbar__list">
@@ -56,6 +56,19 @@
                 </div>
             </div>
         </div>
+        <div class="header__content">
+            <div class="container">
+                <div class="header__content-inner">
+                    <figure class="header__img-wrap">
+                        <img src="/assets/img/Organic.png" alt="" class="header__img">
+                    </figure>
+                    <h1 class="header__title">
+                        Food for a golden life.
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
     </header>
     <!-- End Header -->
     <!-- Main -->
@@ -171,7 +184,7 @@
                     </div>
                     <div class="col-5">
                         <figure class="footer__logo-wrap">
-                            <img src="/assets/img/footer-logo.png" alt="" class="footer__logo">
+                            <img src="assets/img/footer-logo.png" alt="" class="footer__logo">
                         </figure>
                     </div>
                     <div class="col-4">

@@ -3,7 +3,7 @@
 
 <head>
     @include('main.header')
-    <link rel="stylesheet" href="/assets/css/product.css">
+    <link rel="stylesheet" href="assets/css/product.css">
 
 </head>
 
@@ -16,7 +16,7 @@
                 <div class="container">
                     <div class="header__top-inner">
                         <!-- Logo -->
-                        <img src="/assets/img/logo.png" alt="" class="logo">
+                        <img src="assets/img/logo.png" alt="" class="logo">
                         <!-- Navbar -->
                         <nav class="navbar">
                             <ul class="navbar__list">
@@ -142,7 +142,103 @@
                         <div class="col">
                             <div class="product__item">
                                 <figure class="product__img-wrap">
-                                    <img src="/assets/img/thuyNga.jpg" alt="" class="product__img">
+                                    <img src="assets/img/thuyNga.jpg" alt="" class="product__img">
+                                </figure>
+                                <div class="product__item-body">
+                                    <p class="product__type">
+                                        Người đẹp
+                                    </p>
+                                    <h3 class="product__item-title">
+                                        Seeds of Change Organic Quinoe
+                                        Naturel
+                                    </h3>
+                                    <div class="ratting">
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <span>(100.0)</span>
+                                    </div>
+                                    <p class="manu">
+                                        <span>By</span><span> Thái Nguyễn</span>
+                                    </p>
+                                    <div class="product__actions">
+                                        <p class="product__price"><span class="product__price-before">$28.85</span><span
+                                                class="product__price-after">$30</span></p>
+                                        <a href="" class="btn btn-2 product__btn-link">Add</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="product__item">
+                                <figure class="product__img-wrap">
+                                    <img src="assets/img/thuyNga.jpg" alt="" class="product__img">
+                                </figure>
+                                <div class="product__item-body">
+                                    <p class="product__type">
+                                        Người đẹp
+                                    </p>
+                                    <h3 class="product__item-title">
+                                        Seeds of Change Organic Quinoe
+                                        Naturel
+                                    </h3>
+                                    <div class="ratting">
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <span>(100.0)</span>
+                                    </div>
+                                    <p class="manu">
+                                        <span>By</span><span> Thái Nguyễn</span>
+                                    </p>
+                                    <div class="product__actions">
+                                        <p class="product__price"><span class="product__price-before">$28.85</span><span
+                                                class="product__price-after">$30</span></p>
+                                        <a href="" class="btn btn-2 product__btn-link">Add</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="product__item">
+                                <figure class="product__img-wrap">
+                                    <img src="assets/img/thuyNga.jpg" alt="" class="product__img">
+                                </figure>
+                                <div class="product__item-body">
+                                    <p class="product__type">
+                                        Người đẹp
+                                    </p>
+                                    <h3 class="product__item-title">
+                                        Seeds of Change Organic Quinoe
+                                        Naturel
+                                    </h3>
+                                    <div class="ratting">
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <i class="fa-solid fa-star product__ratting-icon"></i>
+                                        <span>(100.0)</span>
+                                    </div>
+                                    <p class="manu">
+                                        <span>By</span><span> Thái Nguyễn</span>
+                                    </p>
+                                    <div class="product__actions">
+                                        <p class="product__price"><span class="product__price-before">$28.85</span><span
+                                                class="product__price-after">$30</span></p>
+                                        <a href="" class="btn btn-2 product__btn-link">Add</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="product__item">
+                                <figure class="product__img-wrap">
+                                    <img src="assets/img/thuyNga.jpg" alt="" class="product__img">
                                 </figure>
                                 <div class="product__item-body">
                                     <p class="product__type">
@@ -206,7 +302,7 @@
                         <div class="col">
                             <div class="product__item">
                                 <figure class="product__img-wrap">
-                                    <img src="/assets/img/thuyNga.jpg" alt="" class="product__img">
+                                    <img src="assets/img/thuyNga.jpg" alt="" class="product__img">
                                 </figure>
                                 <div class="product__item-body">
                                     <p class="product__type">
@@ -238,7 +334,7 @@
                         <div class="col">
                             <div class="product__item">
                                 <figure class="product__img-wrap">
-                                    <img src="/assets/img/thuyNga.jpg" alt="" class="product__img">
+                                    <img src="assets/img/thuyNga.jpg" alt="" class="product__img">
                                 </figure>
                                 <div class="product__item-body">
                                     <p class="product__type">
@@ -270,7 +366,7 @@
                         <div class="col">
                             <div class="product__item">
                                 <figure class="product__img-wrap">
-                                    <img src="/assets/img/thuyNga.jpg" alt="" class="product__img">
+                                    <img src="assets/img/thuyNga.jpg" alt="" class="product__img">
                                 </figure>
                                 <div class="product__item-body">
                                     <p class="product__type">
@@ -302,103 +398,7 @@
                         <div class="col">
                             <div class="product__item">
                                 <figure class="product__img-wrap">
-                                    <img src="/assets/img/thuyNga.jpg" alt="" class="product__img">
-                                </figure>
-                                <div class="product__item-body">
-                                    <p class="product__type">
-                                        Người đẹp
-                                    </p>
-                                    <h3 class="product__item-title">
-                                        Seeds of Change Organic Quinoe
-                                        Naturel
-                                    </h3>
-                                    <div class="ratting">
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <span>(100.0)</span>
-                                    </div>
-                                    <p class="manu">
-                                        <span>By</span><span> Thái Nguyễn</span>
-                                    </p>
-                                    <div class="product__actions">
-                                        <p class="product__price"><span class="product__price-before">$28.85</span><span
-                                                class="product__price-after">$30</span></p>
-                                        <a href="" class="btn btn-2 product__btn-link">Add</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="product__item">
-                                <figure class="product__img-wrap">
-                                    <img src="/assets/img/thuyNga.jpg" alt="" class="product__img">
-                                </figure>
-                                <div class="product__item-body">
-                                    <p class="product__type">
-                                        Người đẹp
-                                    </p>
-                                    <h3 class="product__item-title">
-                                        Seeds of Change Organic Quinoe
-                                        Naturel
-                                    </h3>
-                                    <div class="ratting">
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <span>(100.0)</span>
-                                    </div>
-                                    <p class="manu">
-                                        <span>By</span><span> Thái Nguyễn</span>
-                                    </p>
-                                    <div class="product__actions">
-                                        <p class="product__price"><span class="product__price-before">$28.85</span><span
-                                                class="product__price-after">$30</span></p>
-                                        <a href="" class="btn btn-2 product__btn-link">Add</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="product__item">
-                                <figure class="product__img-wrap">
-                                    <img src="/assets/img/thuyNga.jpg" alt="" class="product__img">
-                                </figure>
-                                <div class="product__item-body">
-                                    <p class="product__type">
-                                        Người đẹp
-                                    </p>
-                                    <h3 class="product__item-title">
-                                        Seeds of Change Organic Quinoe
-                                        Naturel
-                                    </h3>
-                                    <div class="ratting">
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <i class="fa-solid fa-star product__ratting-icon"></i>
-                                        <span>(100.0)</span>
-                                    </div>
-                                    <p class="manu">
-                                        <span>By</span><span> Thái Nguyễn</span>
-                                    </p>
-                                    <div class="product__actions">
-                                        <p class="product__price"><span class="product__price-before">$28.85</span><span
-                                                class="product__price-after">$30</span></p>
-                                        <a href="" class="btn btn-2 product__btn-link">Add</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="product__item">
-                                <figure class="product__img-wrap">
-                                    <img src="/assets/img/thuyNga.jpg" alt="" class="product__img">
+                                    <img src="assets/img/thuyNga.jpg" alt="" class="product__img">
                                 </figure>
                                 <div class="product__item-body">
                                     <p class="product__type">
@@ -488,7 +488,7 @@
                         <div class="col-3">
                             <div class="deal__item">
                                 <figure class="product__img-wrap">
-                                    <img src="/assets/img/thuyNga.jpg" alt="" class="product__img">
+                                    <img src="assets/img/thuyNga.jpg" alt="" class="product__img">
                                 </figure>
                                 <div class="deal__item-body product__item-body">
                                     <h3 class="product__item-title">
@@ -517,7 +517,7 @@
                         <div class="col-3">
                             <div class="deal__item">
                                 <figure class="product__img-wrap">
-                                    <img src="/assets/img/thuyNga.jpg" alt="" class="product__img">
+                                    <img src="assets/img/thuyNga.jpg" alt="" class="product__img">
                                 </figure>
                                 <div class="deal__item-body product__item-body">
                                     <h3 class="product__item-title">
@@ -546,7 +546,7 @@
                         <div class="col-3">
                             <div class="deal__item">
                                 <figure class="product__img-wrap">
-                                    <img src="/assets/img/thuyNga.jpg" alt="" class="product__img">
+                                    <img src="assets/img/thuyNga.jpg" alt="" class="product__img">
                                 </figure>
                                 <div class="deal__item-body product__item-body">
                                     <h3 class="product__item-title">

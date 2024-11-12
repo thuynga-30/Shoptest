@@ -59,10 +59,10 @@ class MainController extends Controller
 
     $email = $request->input('email');
     $content = $request->input('content');
-
+    $admin='veganicshopa@gmail.com';
     
         // Send the email
-        Mail::to($request->email)->send(new ContactMail($email, $content));
+        Mail::to($admin)->send(new ContactMail($email, $content));
         return redirect()->route('home')->with('success', 'Send Success');
     
         // Handle the error if email fails to send

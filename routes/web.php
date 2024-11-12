@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\LoginController;
 use App\Http\Controllers\User\MainController;
 use App\Http\Controllers\User\AccountController;
+use App\Http\Controllers\User\ProductController;
+use App\Http\Controllers\User\CategoryController;
 
 // Route chính của trang shop
 Route::get('main/shop/index', [MainController::class, 'index'])->name('index');
@@ -16,9 +18,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [MainController::class, 'admin'])->name('admin');
     Route::get('/logout', [MainController::class, 'logout'])->name('logout');
 });
-
-
-
     Route::get('users/log-sign/signup', [AccountController::class, 'signup'])->name('signup');
     Route::get('/verify-account/{email}',[AccountController::class, 'verify'])->name('verify');
     Route::post('users/log-sign/signup/save', [AccountController::class, 'save']);
@@ -35,12 +34,20 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/about', [MainController::class, 'about'])->name('about');
     //contact
     Route::get('/contact', [MainController::class, 'contact'])->name('contact');
-    //contact_store
     Route::post('/contact/store', [MainController::class, 'contact_store'])->name('contact-store');
     //product
     Route::get('/product', [MainController::class, 'product'])->name('product');
     Route::get('/product/{id}', [MainController::class, 'productDetail'])->name('productDetail');
     //cart
     Route::get('/cart', [MainController::class, 'cart'])->name('cart');
+    //group prefix
+    Route::prefix('admin')->group(function () {
+        Route::resource([
+            'category' => CategoryController::class,
+            'product' => ProductController::class,
+    ]);
+        
+    });
+
     
     
