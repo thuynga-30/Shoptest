@@ -2,9 +2,8 @@
 <html lang="en">
 
 <head>
-    @include('main.header')
+  @include('main.header')
     <link rel="stylesheet" href="/assets/css/about.css">
-
 </head>
 
 <body>
@@ -16,42 +15,9 @@
                 <div class="container">
                     <div class="header__top-inner">
                         <!-- Logo -->
-                        <img src="/assets/img/logo.png" alt="" class="logo">
+                        <img src="/assets/img/logo4.png" alt="" class="logo">
                         <!-- Navbar -->
-                        <nav class="navbar">
-                            <ul class="navbar__list">
-                                <li class="navbar__item">
-                                    <a href="{{ route('home') }}" class="navbar__link">Home</a>
-                                </li>
-                                <li class="navbar__item">
-                                    <a href="{{ route('about') }}" class="navbar__link">About</a>
-                                </li>
-                                <li class="navbar__item">
-                                    <a href="{{ route('product') }}" class="navbar__link">Product</a>
-                                </li>
-                                <li class="navbar__item">
-                                    <a href="{{ route('cart') }}" class="navbar__link">
-                                        <i class="fa-solid fa-cart-shopping navbar__link-icon"></i>
-                                        <span class="navbar__link-text">
-                                            Cart
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="navbar__item">
-                                    <a href="{{ route('contact') }}" class="navbar__link navbar__link--special btn">Contact</a>
-                                </li>
-                            </ul>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="navbar__item dropdown">
-                                    <a href="#" class="navbar__link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        {{ Auth::user()->name }} <b class="caret"></b>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="{{ route('logout') }}" class="navbar__link">Log out</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
+                       @include('main.shop.navbar')
                     </div>
                 </div>
             </div>
@@ -354,11 +320,11 @@
                         <div class="col-4">
                             <div class="our__member">
                                 <figure class="our__avt-wrap">
-                                    <img src="/assets/img/thuyNga.jpg" alt="" class="our__avt">
+                                    <img src="/assets/img/thnga.jpg" alt="" class="our__avt">
                                 </figure>
                                 <div class="our__info">
                                     <h3 class="our__name">Lê Thị Thúy Nga</h3>
-                                    <p class="our__job">Leader-Đẹp gái</p>
+                                    <p class="our__job">Leader - Backend</p>
                                     <div class="our__social">
                                         <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
                                             <i class="fa-brands fa-facebook-f"></i>
@@ -377,11 +343,11 @@
                         <div class="col-4">
                             <div class="our__member">
                                 <figure class="our__avt-wrap">
-                                    <img src="/assets/img/thuyNga.jpg" alt="" class="our__avt">
+                                    <img src="/assets/img/ttung.jpg" alt="" class="our__avt">
                                 </figure>
                                 <div class="our__info">
-                                    <h3 class="our__name">Lê Thị Thúy Nga</h3>
-                                    <p class="our__job">Leader-Đẹp gái</p>
+                                    <h3 class="our__name">Nguyễn Thanh Tùng</h3>
+                                    <p class="our__job">Design - Frontend</p>
                                     <div class="our__social">
                                         <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
                                             <i class="fa-brands fa-facebook-f"></i>
@@ -403,62 +369,10 @@
         </div>
     </main>
     <!-- Emd Main -->
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__inner">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="footer__site-map">
-                            <h3 class="footer__title section-title">
-                                Site Map
-                            </h3>
-                            <ul class="footer__list">
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Home</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">About</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Product</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Food</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Cart</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-5">
-                        <figure class="footer__logo-wrap">
-                            <img src="/assets/img/footer-logo.png" alt="" class="footer__logo">
-                        </figure>
-                    </div>
-                    <div class="col-4">
-                        <div class="footer__form">
-                            <h3 class="footer__title section-title">
-                                Contact us here
-                            </h3>
-                            <form action="" class="footer__form-inner">
-                                <div class="footer__form-group form-group">
-                                    <input type="email" id="email" class="form-control footer__form-input"
-                                        placeholder="Enter your email" required>
-                                </div>
-                                <button type="submit" class="btn btn-2">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End Footer -->
+   
     <!-- Bootstrap-->
     <!-- JS -->
-   @include('main.footer')
+    @include('main.footer')
 </body>
 
 </html>

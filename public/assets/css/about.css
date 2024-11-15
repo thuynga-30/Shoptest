@@ -86,7 +86,8 @@ body{
 .provide__icon-wrap {
     margin-bottom: 30px;
     padding: 20px;
-    background-color: var(--primary-color);
+    background-color: #cdee80;
+    /* background-color: var(--primary-color); */
     border: 3px solid var(--primary-color);
     border-radius: 50%;
     transition: all .5s ease;
@@ -204,7 +205,7 @@ body{
 }
 /* Our */
 .our{
-    padding: 50px 0;
+    padding: 95px 0;
 }
 .our .row{
     align-items: center;

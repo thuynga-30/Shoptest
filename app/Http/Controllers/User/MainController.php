@@ -10,20 +10,26 @@ use Mail;
 use App\Models\User;
 //contactmail
 use App\Mail\ContactMail;
+use App\Models\Product;
+
 
 class MainController extends Controller
 {
-    public function _construct(){
+    public function __construct(){
         $this->middleware('auth',['except'=> 'logout']);
     }
     public function index(){
+        $products=Product::all();
         return view('main.shop.index',[
-            'title' => 'VeganicShop'
+            'title' => 'VeganicShop',
+            'products'=>$products
         ]);
     }
     public function home(){
+        $products=Product::all();
         return view('main.shop.home',[
-            'title' => 'Home'
+            'title' => 'Home',
+            'products'=>$products
         ]);
     }
     public function logout(){
@@ -53,16 +59,20 @@ class MainController extends Controller
 {
     // Validate the input data
     $request->validate([
+        'name' => 'required',
+        'phone' => '',
         'email' => 'required|email',
         'content' => 'required|string|min:5',
     ]);
-
+    //name
+    $name = $request->input('name');
+    $phone = $request->input('phone');
     $email = $request->input('email');
     $content = $request->input('content');
     $admin='veganicshopa@gmail.com';
     
         // Send the email
-        Mail::to($admin)->send(new ContactMail($email, $content));
+        Mail::to($admin)->send(new ContactMail($name,$phone,$email, $content));
         return redirect()->route('home')->with('success', 'Send Success');
     
         // Handle the error if email fails to send
@@ -76,10 +86,15 @@ class MainController extends Controller
         ]);
     }
     //product
-    public function product(){
-        return view('main.shop.product',[
-            'title' => 'Product'
-        ]);
-    }
+  
+    //product_details
+    public function product_details(Product $product){
+        $products = Product::findOrFail($product);
+        return view('main.shop.product-detail',[
+            'title' => 'Product Details',
+            'products' => $products
+            ]);
+        }
+
 }
 

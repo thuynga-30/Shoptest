@@ -95,6 +95,7 @@
     margin-top: 30px;
     display: block;
     width: 100%;
+    padding-bottom: 50px;
 }
 .contact__social {
     display: flex;

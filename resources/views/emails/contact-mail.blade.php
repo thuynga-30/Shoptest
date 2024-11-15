@@ -6,7 +6,8 @@
 </head>
 <body>
     <p>You have a new message from: {{  Auth::user()->name }}</p>
-    <p>Email's address: {{ $email }}</p>
+    <p>Email's address: {{ Auth::user()->email }}</p>
+    <p>Phonenumber: {{ Auth::user()->phone }}</p>
     <p>Message:{{ $content }}</p>
 </body>
 </html>

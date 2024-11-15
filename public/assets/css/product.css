@@ -130,7 +130,7 @@
 
 .product__img-wrap {
     width: 100%;
-    height: 100%;
+    height: 200px; /* Chiều cao cố định cho ảnh sản phẩm */
     border-radius: 10px 10px 0 0;
     overflow: hidden;
 }
@@ -141,12 +141,13 @@
     object-fit: cover;
     object-position: center;
     border-radius: 10px 10px 0 0;
-    transition: all .5s ease;
+    transition: transform 0.5s ease; /* Sử dụng transform để thay đổi kích thước */
 }
 
 .product__img:hover {
-    scale: 1.1;
+    transform: scale(1.1); /* Hiệu ứng phóng to khi di chuột qua */
 }
+
 
 .product__actions {
     display: flex;

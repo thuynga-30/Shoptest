@@ -11,8 +11,11 @@ class ContactMail extends Mailable
 
     public $email;
     public $content;
-    public function __construct($email,$content)
+    public function __construct($name,$phone,$email,$content)
     {
+    
+        $this->phone = $phone;
+        $this->name = $name;
         $this->email = $email;
         $this->content = $content;
     }

@@ -76,7 +76,8 @@ class AccountController extends Controller
         ]);
 
         $data= $request->only('email','password');
-        $check = auth()->attempt($data);
+        $remember=true;
+        $check = auth()->attempt($data,$remember);
         if ($check){
             if (auth()->user()->email_verified_at == null)
             {

@@ -3,6 +3,7 @@
 
 <head>
     @include('main.header')
+    <link rel="stylesheet" href="/assets/css/product.css">
     <link rel="stylesheet" href="/assets/css/cart.css">
 
 </head>
@@ -16,59 +17,15 @@
                 <div class="container">
                     <div class="header__top-inner">
                         <!-- Logo -->
-                        <img src="/assets/img/logo.png" alt="" class="logo">
+                        <img src="../assets/img/logo4.png" alt="" class="logo">
                         <!-- Navbar -->
-                        <nav class="navbar">
-                            <ul class="navbar__list">
-                                <li class="navbar__item">
-                                    <a href="{{ route('home') }}" class="navbar__link">Home</a>
-                                </li>
-                                <li class="navbar__item">
-                                    <a href="{{ route('about') }}" class="navbar__link">About</a>
-                                </li>
-                                <li class="navbar__item">
-                                    <a href="{{ route('product') }}" class="navbar__link">Product</a>
-                                </li>
-                                <li class="navbar__item">
-                                    <a href="{{ route('cart') }}" class="navbar__link">
-                                        <i class="fa-solid fa-cart-shopping navbar__link-icon"></i>
-                                        <span class="navbar__link-text">
-                                            Cart
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="navbar__item">
-                                    <a href="{{ route('contact') }}" class="navbar__link navbar__link--special btn">Contact</a>
-                                </li>
-                            </ul>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="navbar__item dropdown">
-                                    <a href="#" class="navbar__link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        {{ Auth::user()->name }} <b class="caret"></b>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="{{ route('logout') }}" class="navbar__link">Log out</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
+                        @include('main.shop.navbar')
+
                     </div>
                 </div>
             </div>
         </div>
-        <div class="header__content">
-            <div class="container">
-                <div class="header__content-inner">
-                    <figure class="header__img-wrap">
-                        <img src="/assets/img/Organic.png" alt="" class="header__img">
-                    </figure>
-                    <h1 class="header__title">
-                        Food for a golden life.
-                    </h1>
-                </div>
-            </div>
-        </div>
-    </div>
+       
     </header>
     <!-- End Header -->
     <!-- Main -->
@@ -80,9 +37,12 @@
                     <thead>
                         <tr>
                             <th>Product</th>
+                            <th>Title</th>
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Subtotal</th>
+                            <th>Handle</th>
+                            <th>Choose</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -90,11 +50,12 @@
                             <td>
                                 <div class="cart__product">
                                     <figure class="cart__img-wrap">
-                                        <img src="/assets/img/thuyNga.jpg" alt="" class="cart__img">
+                                        <img src="../assets/img/thuyNga.jpg" alt="" class="cart__img">
                                     </figure>
-                                    <h3 class="cart__product-title">Thúy Nga</h3>
+                                    
                                 </div>
                             </td>
+                            <td><h3 class="cart__product-title">Thúy Nga</h3></td>
                             <td>$ Vô giá</td>
                             <td>
                                 <div class="cart__number-box form-group">
@@ -108,35 +69,20 @@
                                 </div>
                             </td>
                             <td>$1100</td>
-                        </tr>
-                        <tr>
                             <td>
-                                <div class="cart__product">
-                                    <figure class="cart__img-wrap">
-                                        <img src="/assets/img/thuyNga.jpg" alt="" class="cart__img">
-                                    </figure>
-                                    <h3 class="cart__product-title">Thúy Nga</h3>
-                                </div>
+                                <button class="btn-handle">
+                                    <i class="fa fa-times text-danger"></i>
+                                </button>
                             </td>
-                            <td>$ Vô giá</td>
                             <td>
-                                <div class="cart__number-box form-group">
-                                    <button class="cart__btn cart__btn--plus">
-                                        -
-                                    </button>
-                                    <input type="text" class="form-control text-center cart__number" value="1">
-                                    <button class="cart__btn cart__btn--minus">
-                                        +
-                                    </button>
-                                </div>
+                                <input type="checkbox" class="cart__choose">
                             </td>
-                            <td>$1100</td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="cart__action">
                     <button class="btn btn-2">Return To Shop</button>
-                    <button class="btn btn-2">Update Cart</button>
+                    <button class="btn btn-2">Check Out</button>
                 </div>
                 <div class="cart__summary">
                     <div class="row">
@@ -173,58 +119,7 @@
     </main>
     <!-- Emd Main -->
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__inner">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="footer__site-map">
-                            <h3 class="footer__title section-title">
-                                Site Map
-                            </h3>
-                            <ul class="footer__list">
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Home</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">About</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Product</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Food</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Cart</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-5">
-                        <figure class="footer__logo-wrap">
-                            <img src="/assets/img/footer-logo.png" alt="" class="footer__logo">
-                        </figure>
-                    </div>
-                    <div class="col-4">
-                        <div class="footer__form">
-                            <h3 class="footer__title section-title">
-                                Contact us here
-                            </h3>
-                            <form action="" class="footer__form-inner">
-                                <div class="footer__form-group form-group">
-                                    <input type="email" id="email" class="form-control footer__form-input"
-                                        placeholder="Enter your email" required>
-                                </div>
-                                <button type="submit" class="btn btn-2">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End Footer -->
+   
     <!-- Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

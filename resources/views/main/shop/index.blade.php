@@ -17,6 +17,7 @@
                         <!-- Logo -->
                         <img src="/assets/img/logo.png" alt="" class="logo">
                         <!-- Navbar -->
+                        
                         <nav class="navbar">
                             <ul class="navbar__list">
                                 <li class="navbar__item">
@@ -28,9 +29,7 @@
                                 <li class="navbar__item">
                                     <a href="" class="navbar__link">Product</a>
                                 </li>
-                                <li class="navbar__item">
-                                    <a href="" class="navbar__link">Food</a>
-                                </li>
+                                @guest
                                 <li class="navbar__item">
                                     <a href="{{ route('login') }}" class="navbar__link">LogIn</a>
                                 </li>
@@ -40,6 +39,31 @@
                                 </li>
                             </ul>
                         </nav>
+                        @endguest
+                        @auth
+                        <li class="navbar__item">
+                            <a href="{{ route('cart') }}" class="navbar__link">
+                                <i class="fa-solid fa-cart-shopping navbar__link-icon"></i>
+                                <span class="navbar__link-text">
+                                    Cart
+                                </span>
+                            </a>
+                        </li>
+                            
+                        <li class="navbar__item">
+                            <a href="{{ route('contact') }}" class="navbar__link navbar__link--special btn">Contact</a>
+                        </li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <div class="dropdown">
+                                <button href="" class="dropdown-btn" onclick="toggleDropdown()">
+                                    {{ Auth::user()->name }} <b class="caret"></b>
+                                </button>
+                                <div class="dropdown-content" id="dropdownMenu">
+                                   <ul>
+                                    <li><a href="">Profile</a></li>
+                                    <li><a href="">Link 3</a></li>
+                                    <li><a href="{{ route('logout') }}">Logout</a> </li>
+                        @endauth
                     </div>
                 </div>
             </div>
@@ -555,66 +579,7 @@
         <!-- End Media Section -->
     </main>
     <!-- Emd Main -->
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__inner">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="footer__site-map">
-                            <h3 class="footer__title section-title">
-                                Site Map
-                            </h3>
-                            <ul class="footer__list">
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Home</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">About</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Product</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Food</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Cart</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-5">
-                        <figure class="footer__logo-wrap">
-                            <img src="/assets/img/footer-logo.png" alt="" class="footer__logo">
-                        </figure>
-                    </div>
-                    <div class="col-4">
-                        <div class="footer__form">
-                            <h3 class="footer__title section-title">
-                                Contact us here
-                            </h3>
-                            <form action="" class="footer__form">
-                                <div class="footer__form-group form-group">
-                                    <label for="email" class="footer__form-label">Email</label>
-                                    <input type="email" id="email" class="form-control footer__form-input"
-                                        placeholder="Enter your email" required>
-                                </div>
-                                <div class="footer__form-group form-group">
-                                    <label for="mess" class="footer__form-label">Message</label>
-                                    <textarea name="mess" id="mess" class="form-control footer__form-mess"
-                                        placeholder="Enter your message" rows="4" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-2">Submit</button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End Footer -->
+   
     <!-- Bootstrap-->
     <!-- JS -->
 

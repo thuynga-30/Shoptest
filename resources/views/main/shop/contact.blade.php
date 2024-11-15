@@ -3,6 +3,7 @@
 
 <head>
     @include('main.header')
+    <link rel="stylesheet" href="assets/css/product.css">
     <link rel="stylesheet" href="assets/css/contact.css">
 
 </head>
@@ -16,59 +17,15 @@
                 <div class="container">
                     <div class="header__top-inner">
                         <!-- Logo -->
-                        <img src="assets/img/logo.png" alt="" class="logo">
+                        <img src="assets/img/logo4.png" alt="" class="logo">
                         <!-- Navbar -->
-                        <nav class="navbar">
-                            <ul class="navbar__list">
-                                <li class="navbar__item">
-                                    <a href="{{ route('home') }}" class="navbar__link">Home</a>
-                                </li>
-                                <li class="navbar__item">
-                                    <a href="{{ route('about') }}" class="navbar__link">About</a>
-                                </li>
-                                <li class="navbar__item">
-                                    <a href="{{ route('product') }}" class="navbar__link">Product</a>
-                                </li>
-                                <li class="navbar__item">
-                                    <a href="{{ route('cart') }}" class="navbar__link">
-                                        <i class="fa-solid fa-cart-shopping navbar__link-icon"></i>
-                                        <span class="navbar__link-text">
-                                            Cart
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="navbar__item">
-                                    <a href="{{ route('contact') }}" class="navbar__link navbar__link--special btn">Contact</a>
-                                </li>
-                            </ul>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="navbar__item dropdown">
-                                    <a href="#" class="navbar__link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        {{ Auth::user()->name }} <b class="caret"></b>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="{{ route('logout') }}" class="navbar__link">Log out</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
+                        @include('main.shop.navbar')
+
                     </div>
                 </div>
             </div>
         </div>
-        <div class="header__content">
-            <div class="container">
-                <div class="header__content-inner">
-                    <figure class="header__img-wrap">
-                        <img src="/assets/img/Organic.png" alt="" class="header__img">
-                    </figure>
-                    <h1 class="header__title">
-                        Food for a golden life.
-                    </h1>
-                </div>
-            </div>
-        </div>
-    </div>
+        
     </header>
     <!-- End Header -->
     <!-- Main -->
@@ -90,7 +47,16 @@
                             <form action="{{ route('contact-store') }}" method="post" autocomplete="on">
                                 @csrf
                                 <div class="row">
-                                    
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên" value=" {{ Auth::user()->name }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Số điện thoại" value=" {{ Auth::user()->phone }}">
+                                        </div>
+                                    </div>
                                     <div class="col-12">
                                         <div class="form-group">
                                             <input type="email" class="form-control" id="email" name="email" value=" {{ Auth::user()->email }}">
@@ -122,21 +88,21 @@
                                 <ul class="contact__list">
                                     <li class="contact__item">
                                         <div class="contact__icon-wrap">
-                                            <i class="fa-solid fa-location-dot"></i>
+                                        <i class="fa-solid fa-phone"></i>
                                         </div>
-                                        <a class="contact__link" href="mailto:contact@tnna.vn">contact@tnna.vn</a>
+                                        <a class="contact__link" href="mailto:contact@tnna.vn">0943362482</a>
                                     </li>
                                     <li class="contact__item">
                                         <div class="contact__icon-wrap">
-                                            <i class="fa-solid fa-location-dot"></i>
+                                        <i class="fa-solid fa-envelope"></i>
                                         </div>
-                                        <a class="contact__link" href="mailto:contact@tnna.vn">contact@tnna.vn</a>
+                                        <a class="contact__link" href="mailto:contact@tnna.vn">veganicshopa@gmail.com</a>
                                     </li>
                                     <li class="contact__item">
                                         <div class="contact__icon-wrap">
-                                            <i class="fa-solid fa-location-dot"></i>
+                                        <i class="fa-solid fa-location-dot"></i>
                                         </div>
-                                        <a class="contact__link" href="mailto:contact@tnna.vn">contact@tnna.vn</a>
+                                        <a class="contact__link" href="mailto:contact@tnna.vn">356/19 Ngũ Hành Sơn</a>
                                     </li>
                                 </ul>
                                 <div class="contact__social">
@@ -149,68 +115,16 @@
                     </div>
                 </div>
             </div>
-            <iframe class="contact__map" src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d11144.790398555191!2d108.24555237925955!3d15.994775983622931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d15.9909237!2d108.2441499!5e0!3m2!1sen!2s!4v1730477141680!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="contact__map" src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d61371.720293245744!2d108.2120272!3d15.9753389!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x3142108997dc971f%3A0x1295cb3d313469c9!2zVmlldG5hbSAtIEtvcmVhIFVuaXZlcnNpdHkgb2YgSW5mb3JtYXRpb24gYW5kIENvbW11bmljYXRpb24gVGVjaG5vbG9neSwgxJDGsOG7nW5nIFRy4bqnbiDEkOG6oWkgTmdoxKlhLCBIw7JhIFF1w70sIE5nxakgSMOgbmggU8ahbiwgRGEgTmFuZywgVmlldG5hbQ!3m2!1d15.975260299999999!2d108.253227!5e0!3m2!1sen!2s!4v1730963950324!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </main>
     <!-- End Main -->
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__inner">
-                <div class="row">
-                    <div class="col-3">
-                        <div class="footer__site-map">
-                            <h3 class="footer__title section-title">
-                                Site Map
-                            </h3>
-                            <ul class="footer__list">
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Home</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">About</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Product</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Food</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Cart</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-5">
-                        <figure class="footer__logo-wrap">
-                            <img src="assets/img/footer-logo.png" alt="" class="footer__logo">
-                        </figure>
-                    </div>
-                    <div class="col-4">
-                        <div class="footer__form">
-                            <h3 class="footer__title section-title">
-                                Contact us here
-                            </h3>
-                            <form action="" class="footer__form-inner">
-                                <div class="footer__form-group form-group">
-                                    <input type="email" id="email" class="form-control footer__form-input"
-                                        placeholder="Enter your email" required>
-                                </div>
-                                <button type="submit" class="btn btn-2">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End Footer -->
+    
     <!-- Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <!-- JS -->
     @include('main.footer')
 </body>
 

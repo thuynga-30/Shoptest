@@ -36,8 +36,8 @@
 }
 
 .cart__img-wrap {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
 }
 
 .cart__img {
@@ -105,7 +105,17 @@
     color: white;
     background-color: var(--primary-color);
 }
-
+.btn-handle{
+    padding: 15px 17px;
+    font-size: 2rem;
+    font-weight: 900;
+    border: none;
+    border-radius: 50%;
+}
+.cart__choose{
+    width: 20px;
+    height: 20px;
+}
 /* Summary */
 .cart__summary {
     margin-top: 50px;
