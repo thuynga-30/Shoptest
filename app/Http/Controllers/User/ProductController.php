@@ -14,16 +14,16 @@ class ProductController extends Controller
             'title' => 'Product'
         ]);
     }
-    public function product_details(Product $product){
+    public function product_details(Product $product) {
         $randomProducts = Product::inRandomOrder()->limit(4)->get();
-        return view('main.shop.product-detail',[
+        return view('main.shop.product-detail', [
             'title' => 'Product Details',
-            'product' => $product,
+            'product' => $product, // Dữ liệu của sản phẩm
             'randomProducts' => $randomProducts
-            ]);
-        }
+        ]);
+    }
     
-
+    
     //showrandom product
     public function showRandomProduct(){
         
@@ -32,8 +32,4 @@ class ProductController extends Controller
            
         ]);
     }
-    // public function showDetail($id){
-    //     $product = Product::findOrFail($id);
-    //     return view('main.shop.product-detail', compact('product'));
-    //     }
 }

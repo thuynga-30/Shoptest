@@ -20,9 +20,10 @@ class MainController extends Controller
     }
     public function index(){
         $products=Product::all();
+        $product=Product::all();
         return view('main.shop.index',[
             'title' => 'VeganicShop',
-            'products'=>$products
+            'products'=>$products,
         ]);
     }
     public function home(){
@@ -88,13 +89,12 @@ class MainController extends Controller
     //product
   
     //product_details
-    public function product_details(Product $product){
-        $products = Product::findOrFail($product);
-        return view('main.shop.product-detail',[
-            'title' => 'Product Details',
-            'products' => $products
-            ]);
-        }
+    // public function product_details(Product $product){
+    //     $products = Product::findOrFail($product);
+    //     return view('main.shop.product-detail',[
+    //         'title' => 'Product Details',
+    //         'products' => $products
+    //         ]);
+    //     }
 
 }
-

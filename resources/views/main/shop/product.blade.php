@@ -174,7 +174,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        @foreach ($products as $product)
+                        @foreach ($products as $prod)
                         <div class="col-3">
                             <div class="deal__item">
                                 <figure class="product__img-wrap">

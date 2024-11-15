@@ -6,6 +6,7 @@ use App\Http\Controllers\User\MainController;
 use App\Http\Controllers\User\AccountController;
 use App\Http\Controllers\User\ProductController;
 use App\Http\Controllers\User\CategoryController;
+use App\Http\Controllers\User\CartController;
 
 // Route chính của trang shop
 Route::get('main/shop/index', [MainController::class, 'index'])->name('index');
@@ -37,11 +38,14 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/contact/store', [MainController::class, 'contact_store'])->name('contact-store');
     //product
     Route::get('/product', [ProductController::class, 'product'])->name('product');
-   // Route::get('/product/{id}', [ProductController::class, 'showProductDetail'])->name('productDeitai');
     Route::get('/product/{product}', [ProductController::class, 'product_details'])->name('details');
     //cart
-    Route::get('/cart', [MainController::class, 'cart'])->name('cart');
+    Route::get('/cart', [CartController::class, 'cart'])->name('cart');
     //group prefix
+    Route::prefix('cart')->group(function () {
+        Route::get('/add/{id}', [CartController::class, 'add_to_cart'])->name('add_to_cart');
+    });
+
   
         
 
