@@ -26,7 +26,7 @@ Route::post('/check-reset/{token}', [AccountController::class, 'Check_resetPass'
 
 // Route cần đăng nhập (dùng middleware 'auth')
 Route::middleware(['auth'])->group(function () {
-    Route::get('main/shop/home', [MainController::class, 'home'])->name('home');
+  //  Route::get('main/shop/home', [MainController::class, 'home'])->name('home');
     Route::get('/admin', [MainController::class, 'admin'])->name('admin');
     Route::get('/logout', [MainController::class, 'logout'])->name('logout');
 });
@@ -40,10 +40,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/product', [ProductController::class, 'product'])->name('product');
     Route::get('/product/{product}', [ProductController::class, 'product_details'])->name('details');
     //cart
-    Route::get('/cart', [CartController::class, 'cart'])->name('cart');
     //group prefix
     Route::prefix('cart')->group(function () {
-        Route::get('/add/{id}', [CartController::class, 'add_to_cart'])->name('add_to_cart');
+        Route::get('/cart', [CartController::class, 'cart'])->name('cart.cart');
+        Route::get('/cart/add/{product}', [CartController::class, 'add_cart'])->name('cart.add');
+        Route::get('/cart/delete/{product}', [CartController::class, 'delete_cart'])->name('cart.delete');
+        Route::get('/cart/update/{product}', [CartController::class, 'update_cart'])->name('cart.update');
+        Route::get('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
+        // Route::post('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
     });
 
   

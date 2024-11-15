@@ -6,33 +6,26 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Mail;
+use Illuminate\Support\Facades\Mail; // Import Mail để gửi email
 use App\Models\User;
 //contactmail
 use App\Mail\ContactMail;
 use App\Models\Product;
-
+use Illuminate\Support\Facades\Mail as FacadesMail;
 
 class MainController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth',['except'=> 'logout']);
+        $this->middleware('auth',['except'=> ['index','about','product','logout']]);
     }
     public function index(){
-        $products=Product::all();
-        $product=Product::all();
+       
         return view('main.shop.index',[
             'title' => 'VeganicShop',
-            'products'=>$products,
+           
         ]);
     }
-    public function home(){
-        $products=Product::all();
-        return view('main.shop.home',[
-            'title' => 'Home',
-            'products'=>$products
-        ]);
-    }
+   
     public function logout(){
         Auth::logout();
         return redirect()->route('index'); 
@@ -71,7 +64,6 @@ class MainController extends Controller
     $email = $request->input('email');
     $content = $request->input('content');
     $admin='veganicshopa@gmail.com';
-    
         // Send the email
         Mail::to($admin)->send(new ContactMail($name,$phone,$email, $content));
         return redirect()->route('home')->with('success', 'Send Success');
@@ -80,21 +72,6 @@ class MainController extends Controller
         return redirect()->route('contact')->with('error', 'Failed to send email. Please try again.');
     
 }
-    //cart
-    public function cart(){
-        return view('main.shop.cart',[
-            'title' => 'Cart'
-        ]);
-    }
-    //product
-  
-    //product_details
-    // public function product_details(Product $product){
-    //     $products = Product::findOrFail($product);
-    //     return view('main.shop.product-detail',[
-    //         'title' => 'Product Details',
-    //         'products' => $products
-    //         ]);
-    //     }
+
 
 }

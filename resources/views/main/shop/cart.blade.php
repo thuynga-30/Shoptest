@@ -46,38 +46,34 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($cart as $item)
                         <tr>
                             <td>
                                 <div class="cart__product">
                                     <figure class="cart__img-wrap">
-                                        <img src="../assets/img/thuyNga.jpg" alt="" class="cart__img">
+                                        <img src="/assets/img/{{ $item->prod->image }}" alt="" class="cart__img">
                                     </figure>
                                     
                                 </div>
                             </td>
-                            <td><h3 class="cart__product-title">Thúy Nga</h3></td>
-                            <td>$ Vô giá</td>
+                            <td><h3 class="cart__product-title">{{$item->prod->name  }}</h3></td>
+                            <td>{{ $item->prod->price}}</td>
                             <td>
                                 <div class="cart__number-box form-group">
-                                    <button class="cart__btn cart__btn--plus">
-                                        -
-                                    </button>
-                                    <input type="text" class="form-control text-center cart__number" value="1">
-                                    <button class="cart__btn cart__btn--minus">
-                                        +
-                                    </button>
+                                    <input type="text" class="form-control text-center cart__number" value="{{ $item->quantity }}">      
                                 </div>
                             </td>
-                            <td>$1100</td>
+                            <td>${{$item->price  }}</td>
                             <td>
-                                <button class="btn-handle">
+                                <a class="btn-handle" href="{{ route('cart.delete',$item->product_id) }}">
                                     <i class="fa fa-times text-danger"></i>
-                                </button>
+                                </a>
                             </td>
                             <td>
                                 <input type="checkbox" class="cart__choose">
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 <div class="cart__action">

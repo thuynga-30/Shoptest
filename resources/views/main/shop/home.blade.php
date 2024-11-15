@@ -4,6 +4,7 @@
 
 <head>
    @include('main.header')
+
 </head>
 
 <body>

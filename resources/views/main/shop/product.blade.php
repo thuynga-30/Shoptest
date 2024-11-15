@@ -142,7 +142,11 @@
                                                 <span class="product__price-before">${{ $prod->price }}</span>
                                                {{-- <span class="product__price-after">${{ $prod->price_after }}</span> --}}
                                             </p>
-                                            <a href="" class="btn btn-2 product__btn-link">Add</a>
+                                            @if (auth()->check())
+                                                <a href="{{ route('cart.add',$prod->id) }}" class="btn btn-2 product__btn-link">Add</a>                                                
+                                            @else
+                                                <a href="{{ route('login') }}" class="btn btn-2 product__btn-link">Add</a>                                                
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

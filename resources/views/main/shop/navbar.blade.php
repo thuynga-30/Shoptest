@@ -7,7 +7,7 @@
         @endguest
         @auth
         <li class="navbar__item">
-            <a href="{{ route('home') }}" class="navbar__link">Home</a>
+            <a href="{{ route('index') }}" class="navbar__link">Home</a>
         </li>
         @endauth
         
@@ -30,7 +30,7 @@
         @endguest
         @auth
         <li class="navbar__item">
-            <a href="{{ route('cart') }}" class="navbar__link">
+            <a href="{{ route('cart.cart') }}" class="navbar__link">
                 <i class="fa-solid fa-cart-shopping navbar__link-icon"></i>
                 <span class="navbar__link-text">
                     Cart

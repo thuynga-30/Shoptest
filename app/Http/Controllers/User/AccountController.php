@@ -87,7 +87,7 @@ class AccountController extends Controller
                 if (Auth::user()->role == 'admin'){
                     return redirect()->route('admin');
                 } else {
-                    return redirect()->route('home');
+                    return redirect()->route('index');
                 }
         }
         } else{
