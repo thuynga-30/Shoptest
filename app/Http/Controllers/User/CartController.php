@@ -29,10 +29,12 @@ class CartController extends Controller
             Cart::where([
                 'user_id'=> $user_id,
                 'product_id'=> $product->id
-            ])->increment('quantity',$quantity);
-            // $cartt->update([
-            //     'quantity' => $cartt->quantity + $quantity
-            // ]);
+            ])->update([
+                    'quantity' => $cartt->quantity + $quantity,
+                     'price' => $product->price * ($cartt->quantity + $quantity),
+                ]);
+            //->increment('quantity',$quantity);
+            // $cartt
             return redirect()->route('cart.cart')->with('success','Product updated to cart');
 
         }else{
@@ -40,7 +42,7 @@ class CartController extends Controller
             'user_id' => auth()->id(),
             'product_id' => $product->id,
             'quantity' => $quantity,
-            'price'=>$product->price,
+            'price'=>($product->price)*$quantity,
         ];
         if (Cart::create($data)){
             return redirect()->route('cart.cart')->with('success','Product added to cart');
@@ -51,8 +53,33 @@ class CartController extends Controller
 
     //update_cart
     public function update_cart(Product $product,Request $request){
+        $quantity= $request->quantity ? $request->quantity : 1 ;
+        $user_id= auth()->id();
+        $cartt = Cart::where([
+            'user_id'=> $user_id,
+            'product_id'=> $product->id
+            ])->first();
+            if($cartt){
+                Cart::where([
+                    'user_id'=> $user_id,
+                    'product_id'=> $product->id
+                    ])->update([
+                        'quantity' => $quantity,
+                        'price' => $product->price * $quantity,
+                    ]);
+                    return redirect()->route('cart.cart')->with('success','Product updated to cart');
+            }else{
+                return redirect()->back()->with('error','Product not found in cart');
+            }
+                        
     }
     public function delete_cart(Product $product){
+        $user_id= auth()->id();
+        Cart::where([
+            'user_id'=> $user_id,
+            'product_id'=> $product->id
+        ])->delete();
+        return redirect()->route('cart.cart')->with('success','Product deleted from cart');
 
     }
     public function clear(){

@@ -66,7 +66,7 @@ class MainController extends Controller
     $admin='veganicshopa@gmail.com';
         // Send the email
         Mail::to($admin)->send(new ContactMail($name,$phone,$email, $content));
-        return redirect()->route('home')->with('success', 'Send Success');
+        return redirect()->route('index')->with('success', 'Send Success');
     
         // Handle the error if email fails to send
         return redirect()->route('contact')->with('error', 'Failed to send email. Please try again.');

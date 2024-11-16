@@ -4,6 +4,9 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Mail\Mailables\Content;
+
 
 class ContactMail extends Mailable
 {
@@ -11,6 +14,8 @@ class ContactMail extends Mailable
 
     public $email;
     public $content;
+    public $name;
+    public $phone;
     public function __construct($name,$phone,$email,$content)
     {
     

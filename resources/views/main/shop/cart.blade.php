@@ -57,13 +57,19 @@
                                 </div>
                             </td>
                             <td><h3 class="cart__product-title">{{$item->prod->name  }}</h3></td>
+                          
                             <td>{{ $item->prod->price}}</td>
+                            
                             <td>
+                                <form action="{{ route('cart.update',$item->product_id) }}" method="get">
                                 <div class="cart__number-box form-group">
-                                    <input type="text" class="form-control text-center cart__number" value="{{ $item->quantity }}">      
+                                    <input type="number" class="form-control text-center cart__number" value="{{ $item->quantity }}" name="quantity">      
                                 </div>
+                                <button><i class="fa fa-save"></i></button>
+                            </form>
                             </td>
                             <td>${{$item->price  }}</td>
+                        
                             <td>
                                 <a class="btn-handle" href="{{ route('cart.delete',$item->product_id) }}">
                                     <i class="fa fa-times text-danger"></i>
