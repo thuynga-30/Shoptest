@@ -85,7 +85,7 @@ class AccountController extends Controller
                 return redirect()->back()->with('error','Your account is not verified yet');
             } else{
                 if (Auth::user()->role == 'admin'){
-                    return redirect()->route('admin');
+                    return redirect()->route('admin.admin');
                 } else {
                     return redirect()->route('index');
                 }
@@ -96,12 +96,7 @@ class AccountController extends Controller
 
     }
 
-    public function changePass()
-    {
-        return view('users.change-pass', [
-            'title' => 'Change Pass'
-        ]);
-    }
+   
 
     public function forgotPass()
     {

@@ -13,11 +13,14 @@ class Product extends Model
         'name',
         'image',
         'price',
-        'type',
         'origin',
         'quantity',
         'description',
         'basic_des',    
+        'category_id',
     ];
+    public function cat(){
+        return $this->hasOne(Category::class,'id','category_id');
+    }
     
 }

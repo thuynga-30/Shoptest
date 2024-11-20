@@ -62,16 +62,16 @@
                         <div class="row">
                             <div class="col-3">
                                 <div class="form-group">
-                                    <label for="search__location" class="search__label">Tour location</label>
+                                    <label for="search__location" class="search__label">Product Name</label>
                                     <input type="text" name="" id="search__location"
                                         class="search__location form-control" placeholder="Search for name...">
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="form-group">
-                                    <label for="search__type" class="search__label">Tour Type</label>
+                                    <label for="search__type" class="search__label">Product Type</label>
                                     <select name="search__type" id="search__type" class="search__select form-control">
-                                        <option class="search__option" value="">Select Tour Type</option>
+                                        <option class="search__option" value="">Select Product Type</option>
                                         <option class="search__option" value="adventure">Adventure</option>
                                         <option class="search__option" value="relaxation">Relaxation</option>
                                         <option class="search__option" value="city">City Tour</option>
@@ -81,10 +81,10 @@
                             </div>
                             <div class="col-3">
                                 <div class="form-group">
-                                    <label for="search__duration" class="search__label">Tour Duration</label>
+                                    <label for="search__duration" class="search__label">Product Origin</label>
                                     <select name="search__duration" id="search__duration"
                                         class="search__select form-control">
-                                        <option class="search__option" value="">Select Duration</option>
+                                        <option class="search__option" value="">Select Origin</option>
                                         <option class="search__option" value="1">1 Day</option>
                                         <option class="search__option" value="2">2-3 Days</option>
                                         <option class="search__option" value="3">4-7 Days</option>
@@ -116,7 +116,7 @@
                                     </figure>
                                     <div class="product__item-body">
                                         <p class="product__type">
-                                            {{ $prod->type }}
+                                            {{ $prod->cat->name }}
                                         </p>
                                         <h3 class="product__item-title">
                                             {{ $prod->name }}
@@ -153,15 +153,15 @@
                             </div>
                         @endforeach
                         
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="pagination">
-                                <span class="pagination__btn pagination__btn-p"><i
-                                        class="fa-solid fa-arrow-left"></i></span>
-                                <span class="pagination__page">1</span>
-                                <span class="pagination__btn pagination__btn-n"><i
-                                        class="fa-solid fa-arrow-right"></i></span>
-                            </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="pagination">
+                            <span class="pagination__btn pagination__btn-p"><i
+                                    class="fa-solid fa-arrow-left"></i></span>
+                            <span class="pagination__page">1</span>
+                            <span class="pagination__btn pagination__btn-n"><i
+                                    class="fa-solid fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </div>

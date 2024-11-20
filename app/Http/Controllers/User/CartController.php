@@ -12,7 +12,15 @@ class CartController extends Controller
 {
      //cart
      public function cart(){
-        $cart= Cart::orderBy('created_at','ASC')->get();
+        $user = auth()->user();
+        if (!$user) {
+            return redirect()->route('login')->with('error', 'Bạn cần đăng nhập để xem giỏ hàng.');
+        }
+
+        $cart = Cart::where('user_id', $user->id)->with('product')->get();
+
+        // return view('cart.index', compact('cart'));
+        // $cart= Cart::orderBy('created_at','ASC')->get();
         return view('main.shop.cart',[
             'title' => 'Cart'
             ],compact('cart'));

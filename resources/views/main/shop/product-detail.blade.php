@@ -109,7 +109,7 @@
                                             <div class="product-detail__desc-list">
                                                 <p class="product-detail__desc-item">
                                                     <span class="product-detail__desc-item-title">Type</span>
-                                                    <span>{{ $product->type }}</span>
+                                                    <span>{{ $product->cat->name }}</span>
                                                 </p>                         
                                             </div>
                                         </div>

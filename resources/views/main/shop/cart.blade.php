@@ -64,8 +64,9 @@
                                 <form action="{{ route('cart.update',$item->product_id) }}" method="get">
                                 <div class="cart__number-box form-group">
                                     <input type="number" class="form-control text-center cart__number" value="{{ $item->quantity }}" name="quantity">      
+                                    <button><i class="fa fa-save"></i></button>
                                 </div>
-                                <button><i class="fa fa-save"></i></button>
+                                
                             </form>
                             </td>
                             <td>${{$item->price  }}</td>
@@ -83,17 +84,12 @@
                     </tbody>
                 </table>
                 <div class="cart__action">
-                    <button class="btn btn-2">Return To Shop</button>
-                    <button class="btn btn-2">Check Out</button>
+                    <a href="{{ route('index') }}" class="btn btn-2">Return To Shop</a>
+                    <a href="{{ route('order.order') }}" class="btn btn-2">Check Out</a>
                 </div>
                 <div class="cart__summary">
                     <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <div class="cart__coupon input-group">
-                                <input type="text" class="form-control" placeholder="Coupon Code">
-                                <button class="btn btn-2">Apply Coupon</button>
-                            </div>
-                        </div>
+                      
                         <div class="col-md-6">
                             <div class="summary__box">
                                 <h4 class="summary__box-title">Cart Total</h4>
@@ -110,7 +106,7 @@
                                     <span class="summary__item-text summary__item-text--small">$1750</span>
                                 </div>
                                 <div class="summary__action">
-                                    <button class="btn btn-2">Proceed to checkout</button>
+                                    <a href="{{ route('order.order') }}" class="btn btn-2">Proceed to checkout</a>
                                 </div>
                             </div>
                         </div>

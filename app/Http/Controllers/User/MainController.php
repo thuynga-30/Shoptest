@@ -30,18 +30,54 @@ class MainController extends Controller
         Auth::logout();
         return redirect()->route('index'); 
     }
-    public function admin(){
-        return view('main.admin.main',[
-            'title' => 'Admin'
-        ]);
-       
-    }
+    
     //about
     public function about(){
         return view('main.shop.about',[
             'title' => 'About Us'
         ]);
     }
+    //profile
+    public function profile(){
+        $user = Auth::user();
+        return view('main.shop.profile',[
+        'title' => 'Profile',
+        'user' => $user
+        ]);
+    }
+  
+    public function updateProfile(Request $request)
+    {
+        // Lấy thông tin người dùng đang đăng nhập
+        
+        $user = User::where('email', $request->email)->first();
+    
+        if (!$user) {
+            return redirect()->back()->with('error', 'User not authenticated');
+        }
+    
+        // Validate dữ liệu
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'phone' => 'required|digits:10',
+            'dob' => 'required|date',
+            'gender' => 'required|in:male,female',
+            'address' => 'required|string|max:255',
+        ]);
+    
+        // Chuẩn bị dữ liệu để update
+        $data = $request->only(['name', 'email', 'phone', 'dob', 'gender', 'address']);
+    
+        // Cập nhật dữ liệu
+        if ($user->update($data)) {
+            return redirect()->route('profile')->with('success', 'Profile updated successfully');
+        }
+    
+        // return redirect()->back()->with('error', 'Failed to update profile');
+    }
+            
+
     //contact
     public function contact(){
         return view('main.shop.contact',[
@@ -72,6 +108,7 @@ class MainController extends Controller
         return redirect()->route('contact')->with('error', 'Failed to send email. Please try again.');
     
 }
+
 
 
 }

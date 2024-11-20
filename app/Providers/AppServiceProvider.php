@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\User;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,7 +32,10 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*',function($view){
             $cats=Category::orderBy('name','ASC')->get();
             $products = Product::orderBy('id','ASC')->get(); 
-            $view->with(compact('cats','products'));
+            // $users = User::orderBy('id','ASC')->get(); 
+            $users = User::where('role', 'user')->get();
+
+            $view->with(compact('cats','products','users'));
 
         });
     }

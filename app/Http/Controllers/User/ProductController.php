@@ -23,13 +23,4 @@ class ProductController extends Controller
         ]);
     }
     
-    
-    //showrandom product
-    public function showRandomProduct(){
-        
-        return view('main.shop.product-detail',[
-            'title' => 'Product Details',
-           
-        ]);
-    }
 }
